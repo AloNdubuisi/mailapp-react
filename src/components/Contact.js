@@ -22,7 +22,7 @@ const Contact = () => {
         <h1 className='text-primary text-center'>Subscribe to our News letter</h1>
         <form ref={form} onSubmit={sendEmail} className="w-75 m-auto">
           <div class="mb-3">
-            <label for="nameinput" class="form-label text-left fs-3 fw-bold">Your Name</label>
+          <label for="nameinput" class="form-label text-left fs-3 fw-bold">Your Name</label>
             <input type="text" class="form-control" id="nameinput" placeholder="your name" />
           </div>
           <div class="mb-3">
@@ -30,8 +30,8 @@ const Contact = () => {
             <input type="email" class="form-control" id="emailinput" placeholder="abc@info.com" />
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label text-left fs-3 fw-bold">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="messahe" class="form-label text-left fs-3 fw-bold">Message</label>
+            <textarea class="form-control" id="message" rows="3" placeholder='your message here...'></textarea>
           </div>
           <button class="w-50 btn btn-primary text-left fs-3 fw-bold" type="submit" value="send">Send</button>
           <p class="mt-5 mb-3 text-muted">© Alumytech.</p>
