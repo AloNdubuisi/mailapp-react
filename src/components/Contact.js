@@ -6,7 +6,7 @@ export const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     emailjs.sendForm('service_t6oes6q', 'template_o4zpofa', form.current, 'BVXg77VIQHxDrfLt6')
       .then((result) => {
         console.log(result.text);
@@ -17,7 +17,34 @@ export const Contact = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
+    <>
+      <div className="container">
+        <h1 className='text-center'>Subscribe to our News letter</h1>
+        <form ref={form} onSubmit={sendEmail}>
+          <div class="mb-3">
+            <label for="nameinput" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="nameinput" placeholder="your name" />
+          </div>
+          <div class="mb-3">
+            <label for="emailinput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailinput" placeholder="abc@info.com" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Send</button>
+          <p class="mt-5 mb-3 text-muted">© Alumytech.</p>
+        </form>
+      </div>
+    </>
+  );
+};
+export default Contact;
+
+
+
+/* <form ref={form} onSubmit={sendEmail}>
       <label>Name</label>
       <input type="text" name="user_name" />
       <label>Email</label>
@@ -25,7 +52,4 @@ export const Contact = () => {
       <label>Message</label>
       <textarea name="message" />
       <input type="submit" value="Send" />
-    </form>
-  );
-};
-export default Contact;
+    </form> */
