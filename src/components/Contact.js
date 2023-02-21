@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-export const Contact = () => {
+
+const Contact = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = () => {
+    // e.preventDefault();
 
     emailjs.sendForm('service_t6oes6q', 'template_o4zpofa', form.current, 'BVXg77VIQHxDrfLt6')
       .then((result) => {
@@ -15,25 +16,24 @@ export const Contact = () => {
         console.log(error.text);
       });
   };
-
   return (
     <>
-      <div className="container">
-        <h1 className='text-center'>Subscribe to our News letter</h1>
-        <form ref={form} onSubmit={sendEmail}>
+      <div className="container mt-5">
+        <h1 className='text-primary text-center'>Subscribe to our News letter</h1>
+        <form ref={form} onSubmit={sendEmail} className="w-50 m-auto">
           <div class="mb-3">
-            <label for="nameinput" class="form-label">Your Name</label>
+            <label for="nameinput" class="form-label text-left fs-3 fw-bold">Your Name</label>
             <input type="text" class="form-control" id="nameinput" placeholder="your name" />
           </div>
           <div class="mb-3">
-            <label for="emailinput" class="form-label">Email address</label>
+            <label for="emailinput" class="form-label text-left fs-3 fw-bold">Email address</label>
             <input type="email" class="form-control" id="emailinput" placeholder="abc@info.com" />
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <label for="exampleFormControlTextarea1" class="form-label text-left fs-3 fw-bold">Message</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Send</button>
+          <button class="w-50 btn btn-primary text-left fs-3 fw-bold" type="submit" value="send">Send</button>
           <p class="mt-5 mb-3 text-muted">© Alumytech.</p>
         </form>
       </div>
