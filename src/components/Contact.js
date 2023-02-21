@@ -20,7 +20,7 @@ const Contact = () => {
     <>
       <div className="container mt-5">
         <h1 className='text-primary text-center'>Subscribe to our News letter</h1>
-        <form ref={form} onSubmit={sendEmail} className="w-50 m-auto">
+        <form ref={form} onSubmit={sendEmail} className="w-75 m-auto">
           <div class="mb-3">
             <label for="nameinput" class="form-label text-left fs-3 fw-bold">Your Name</label>
             <input type="text" class="form-control" id="nameinput" placeholder="your name" />
