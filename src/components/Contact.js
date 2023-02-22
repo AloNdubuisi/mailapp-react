@@ -8,8 +8,8 @@ const Contact = () => {
   const [from_name, setFrom_Name] = useState('')
   const [message, setMessage] = useState('')
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = () => {
+    // e.preventDefault();
     console.log(to_name +  from_name + message);
 
     const emailContent = {
