@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 
@@ -10,20 +10,13 @@ const Contact = () => {
 
   const sendEmail = () => {
     // e.preventDefault();
-    console.log(to_name +  from_name + message);
+    console.log(to_name + from_name + message);
 
-    const emailContent = {
+    emailjs.sendForm('service_t6oes6q', 'template_o4zpofa', 'BVXg77VIQHxDrfLt', {
       to_name: to_name,
       from_name: from_name,
       message: message,
-    };
-    emailjs.sendForm('service_t6oes6q', 'template_o4zpofa', emailContent, 'BVXg77VIQHxDrfLt6')
-      .then((result) => {
-        console.log(result.text);
-        console.log('Message sent');
-      }, (error) => {
-        console.log(error.text);
-      });
+    });
   };
   return (
     <>
@@ -33,17 +26,17 @@ const Contact = () => {
           <div class="mb-3">
             <label htmlFor="nameinput" className="form-label text-left fs-4 fw-bold">Your Name</label>
             <input type="text" className="form-control h-100 fs-4" id="nameinput" placeholder="your name"
-            onChange={(event)=>{setTo_Name(event.target.value)}}/>
+              onChange={(event) => { setTo_Name(event.target.value) }} />
           </div>
           <div class="mb-3">
             <label htmlFor="emailinput" className="form-label text-left fs-4 fw-bold">Email address</label>
-            <input type="email" className="form-control" id="emailinput" placeholder="abc@info.com" 
-            onChange={(event)=>{setFrom_Name(event.target.value)}} />
+            <input type="email" className="form-control" id="emailinput" placeholder="abc@info.com"
+              onChange={(event) => { setFrom_Name(event.target.value) }} />
           </div>
           <div class="mb-3">
             <label htmlFor="messahe" className="form-label text-left fs-4 fw-bold">Message</label>
             <textarea className="form-control" id="message" rows="5" placeholder='your message here...'
-            onChange={(event)=>{setMessage(event.target.value)}}></textarea>
+              onChange={(event) => { setMessage(event.target.value) }}></textarea>
           </div>
           <div className='text-center'>
             <button className="w-50 btn btn-primary fs-3 fw-bold" type="submit" value="send">Send</button>
