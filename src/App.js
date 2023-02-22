@@ -1,6 +1,5 @@
-import './App.css';
 import Contact from './components/Contact';
-// import bootstrap from '../node_modules/'
+
 
 function App() {
   return (
