@@ -46,7 +46,7 @@ const Contact = () => {
             onChange={(event)=>{setMessage(event.target.value)}}></textarea>
           </div>
           <div className='text-center'>
-            <button className="w-25 btn btn-primary fs-3 fw-bold" type="submit" value="send">Send</button>
+            <button className="w-50 btn btn-primary fs-3 fw-bold" type="submit" value="send">Send</button>
           </div>
           <p className="mt-5 mb-3 text-muted">© Alumytech.</p>
         </form>
